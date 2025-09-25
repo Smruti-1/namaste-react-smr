@@ -38,13 +38,15 @@ const cartItems = useSelector((store) => store.cart.items);
       <li className="px-4"> 
       <Link to="/about">  About Us </Link></li>
 
-      <li className="px-4">Cart</li>
+      <li className="px-4">
+  <Link to="/cart">  Cart - ({cartItems.length} items)</Link></li>
 
       <li className="px-4"> 
         User: {loggedInUser} </li>
 
-        <li className="px-4"> 
-      <Link to="/cart">  Cart : Items {cartItems.length}</Link></li>
+       {/* <li className="px-4 font-bold text-xl">
+            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
+          </li> */}
 
       <button className="login" onClick={() => {
         btOfLogin === "Login" ? 

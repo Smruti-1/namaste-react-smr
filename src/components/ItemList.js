@@ -8,6 +8,7 @@ const ItemList = ({items}) => {
 const dispatch = useDispatch();
 
     const handleAdditem = (item) => {
+        console.log(item)
 dispatch( addItem(item));
     }
 

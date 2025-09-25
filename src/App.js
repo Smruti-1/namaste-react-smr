@@ -17,7 +17,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"))
 
 const AppLayout = () => {
-console.log(<Body/>)
+// console.log(<Body/>)
   const [userName , setUserName ] = useState()
 
   useEffect(()=>{
@@ -61,16 +61,17 @@ const appRouter = createBrowserRouter([
     },
     {
       path : "/about",
-      element: <About />
+      element:<Suspense fallback={<h1> Loading.....</h1>}>
+         <About /></Suspense>
     },
     {
       path : "/restaurant/:resId",
       element: <RestaurantMenu />
     },
-    {
-      path : "/cart",
-      element: <Cart />
-    },
+     {
+        path: "/cart",
+        element: <Cart />,
+      },
   ]
   },
 
